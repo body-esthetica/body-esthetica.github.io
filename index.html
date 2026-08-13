@@ -704,7 +704,25 @@
     card.onclick = ()=>openComplexModal(cx);
     cxCarousel.appendChild(card);
 });
-  function scrollCarousel(dir){ cxCarousel.scrollBy({left: dir*300, behavior:'smooth'}); }
+  const EXTRA_SERVICE_CARDS = [
+    {img:'lpg-body-detail.jpeg', tag:'Услуга · технология LPG', title:'LPG-массаж тела', name:'LPG массаж тела', dur:'45 мин', price:2000},
+    {img:'rf-body-detail.jpeg', tag:'Услуга · технология RF', title:'RF-лифтинг по телу', name:'Rf-лифтинг по телу', dur:'20 мин', price:1500},
+    ];
+    EXTRA_SERVICE_CARDS.forEach(sv=>{
+      const card2 = document.createElement('div');
+      card2.className = 'cx-card';
+      card2.innerHTML = `
+      <div class="cx-img"><img src="${sv.img}" alt="${sv.title}" loading="lazy"></div>
+      <div class="cx-body">
+      <div class="cx-tag">${sv.tag}</div>
+      <div class="cx-title">${sv.title}</div>
+      <div class="cx-more">Подробнее →</div>
+      </div>
+      `;
+      card2.onclick = ()=>openServiceModal(sv.name, sv.dur, sv.price);
+      cxCarousel.appendChild(card2);
+    });
+    function scrollCarousel(dir){ cxCarousel.scrollBy({left: dir*300, behavior:'smooth'}); }
 
   function openComplexModal(cx){
     document.getElementById('modal-img').style.display='block';
