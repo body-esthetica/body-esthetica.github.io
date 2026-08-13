@@ -743,6 +743,46 @@
       document.getElementById('modal').classList.add('open');
       return;
 }
+    if(/^lpg массаж тела$/i.test(name.trim())){
+            document.getElementById('modal-img').style.display='block';
+            document.getElementById('modal-img').src = 'lpg-body-detail.jpeg';
+            document.getElementById('modal-body').innerHTML = `
+                    <div class="modal-tag">Услуга · технология LPG</div>
+                            <div class="modal-title">LPG-массаж тела</div>
+                                    <div class="modal-meta">${metaLine}</div>
+                                            <p>LPG-массаж — это аппаратная методика, которая сочетает вакуумное и механическое воздействие роликами на кожу и подкожные ткани. Процедура направлена на улучшение состояния кожи, моделирование фигуры, борьбу с целлюлитом и решение других эстетических и терапевтических задач.</p>
+                                                    <p><b>Эффект:</b></p>
+                                                            <ul class="modal-list">
+                                                                      <li>Уменьшение целлюлита</li>
+                                                                                <li>Моделирование силуэта</li>
+                                                                                          <li>Улучшение качества кожи</li>
+                                                                                                    <li>Выведение токсинов</li>
+                                                                                                              <li>Улучшение микроциркуляции</li>
+                                                                                                                      </ul>
+                                                                                                                              <a class="btn modal-cta" href="https://t.me/Bodyestetica" target="_blank" rel="noopener">Записаться</a>
+                                                                                                                                    `;
+            document.getElementById('modal').classList.add('open');
+            return;
+    }
+        if(/^rf-?\s*лифтинг по телу$/i.test(name.trim())){
+                document.getElementById('modal-img').style.display='block';
+                document.getElementById('modal-img').src = 'rf-body-detail.jpeg';
+                document.getElementById('modal-body').innerHTML = `
+                        <div class="modal-tag">Услуга · технология RF</div>
+                                <div class="modal-title">RF-лифтинг по телу</div>
+                                        <div class="modal-meta">${metaLine}</div>
+                                                <p>Аппаратная косметологическая процедура, которая воздействует на глубокие слои кожи и подкожно-жировую клетчатку с помощью радиочастотных импульсов.</p>
+                                                        <p><b>Эффект:</b></p>
+                                                                <ul class="modal-list">
+                                                                          <li>Улучшение тонуса кожи</li>
+                                                                                    <li>Запуск процессов омоложения</li>
+                                                                                              <li>Коррекция эстетических проблем</li>
+                                                                                                      </ul>
+                                                                                                              <a class="btn modal-cta" href="https://t.me/Bodyestetica" target="_blank" rel="noopener">Записаться</a>
+                                                                                                                    `;
+                document.getElementById('modal').classList.add('open');
+                return;
+        }
     document.getElementById('modal-img').style.display='none';
     document.getElementById('modal-body').innerHTML = `
       <div class="modal-tag">Услуга</div>
